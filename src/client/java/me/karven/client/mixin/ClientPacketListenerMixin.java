@@ -4,7 +4,6 @@ import me.karven.client.Values;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,7 +19,7 @@ public class ClientPacketListenerMixin {
         if (packet.getCount() > 10000) {
             ci.cancel();
             return;
-        };
+        }
         if (!Values.checkLimit(packet.getX(), packet.getZ(), packet.getXDist(), packet.getZDist())) {
             ci.cancel();
             return;
