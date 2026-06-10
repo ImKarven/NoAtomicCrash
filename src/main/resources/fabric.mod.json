@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "noatomiccrash",
+	"version": "${version}",
+	"name": "NoAtomicCrash",
+	"description": "Prevent your game from crashing because of servers using AtomicCrash plugin",
+	"authors": [
+		"Karven"
+	],
+	"license": "WTFPL-2.0",
+	"icon": "assets/noatomiccrash/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.karven.NoAtomicCrash"
+		],
+		"client": [
+			"me.karven.client.NoAtomicCrashClient"
+		]
+	},
+	"mixins": [
+		"noatomiccrash.mixins.json",
+		{
+			"config": "noatomiccrash.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
